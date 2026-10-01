@@ -1,0 +1,21 @@
+npm create vite@latest frontend -- --template react
+it is used for the frontend creation of frontend in this it takes and install the dependencies
+frame work : react and variant : JavaScript
+
+after this change the frontend and to the command line.
+cd frontend and then install the "npm install" .
+to run this we use the "npm run dev" and it gives the link of the frontend page like
+VITE ready
+
+Local: http://localhost:5173/
+when we open this the page is appears vite + react page.
+
+React project created
+        ↓
+npm install
+        ↓
+npm run dev
+        ↓
+React page opens
+
+Once you see the default React/Vite page in the browser
