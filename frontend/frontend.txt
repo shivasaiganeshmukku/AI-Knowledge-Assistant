@@ -19,3 +19,7 @@ npm run dev
 React page opens
 
 Once you see the default React/Vite page in the browser
+
+
+python -m uvicorn main:app --reload --> to run the backend file with the uvicorn file.
+when you run the file you need to change cd to backend and frontend.

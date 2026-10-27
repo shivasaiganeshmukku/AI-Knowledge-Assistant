@@ -55,17 +55,19 @@ def delete_document(filename):
     return True
 
 def add_documents(chunks, filename, file_hash):
-    for index, chunk in enumerate(chunks):
-        collection.add(
-            ids=[f"{filename}_{index}"],
-            documents=[chunk["text"]],
-            embeddings=[chunk["embedding"]],
-            metadatas=[{
+    collection.add(
+        ids=[f"document_{file_hash}_{index}" for index in range(len(chunks))],
+        documents=[chunk["text"] for chunk in chunks],
+        embeddings=[chunk["embedding"] for chunk in chunks],
+        metadatas=[
+            {
                 "filename": filename,
-                "file_hash": file_hash, 
+                "file_hash": file_hash,
                 "chunk_id": index
-            }]
-        )
+            }
+            for index in range(len(chunks))
+        ]
+    )
 
 def search_documents(query_embedding, n_results=3):
     results = collection.query(
